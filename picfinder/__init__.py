@@ -1,0 +1,1 @@
+from .picfinder import app

@@ -1,0 +1,9 @@
+MANIFEST.in
+picfinder/CalHacks.py
+picfinder/__init__.py
+picfinder/picfinder.py
+picfinder.egg-info/PKG-INFO
+picfinder.egg-info/SOURCES.txt
+picfinder.egg-info/dependency_links.txt
+picfinder.egg-info/requires.txt
+picfinder.egg-info/top_level.txt
