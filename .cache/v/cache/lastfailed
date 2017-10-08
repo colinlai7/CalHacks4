@@ -1,0 +1,5 @@
+{
+  "tests/test_picfinder.py::picfinderTestCase::test_empty_db": true,
+  "tests/test_picfinder.py::picfinderTestCase::test_login_logout": true,
+  "tests/test_picfinder.py::picfinderTestCase::test_messages": true
+}

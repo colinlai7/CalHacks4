@@ -4,7 +4,7 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
 
 app = Flask(__name__) # create the application instance :)
-app.config.from_object(__name__) # load config from this file , flaskr.py
+app.config.from_object(__name__) # load config from this file , picfinder.py
 
 # Load default config and override config from an environment variable
 app.config.update(dict(
@@ -50,7 +50,6 @@ def close_db(error):
     if hasattr(g, 'sqlite_db'):
         g.sqlite_db.close()
 
-
 @app.route('/')
 def show_entries():
     db = get_db()
@@ -64,8 +63,8 @@ def add_entry():
     if not session.get('logged_in'):
         abort(401)
     db = get_db()
-    db.execute('insert into entries (imgname, first, second, third, fourth, fifth) values (?, ?, ?, ?, ?, ?)',
-                 [request.form['imgname'], request.form['first'], request.form['second'], request.form['third'], request.form['fourth'], request.form['fifth']])
+    db.execute('insert into entries (imgname, first, second, third, fourth, fifth) values (?,?,?,?,?,?)',
+                 [request.form['title'],request.form['text'],request.form['text'],request.form['text'],request.form['text'], request.form['text']])
     db.commit()
     flash('New entry was successfully posted')
     return redirect(url_for('show_entries'))
@@ -83,6 +82,7 @@ def login():
             flash('You were logged in')
             return redirect(url_for('show_entries'))
     return render_template('login.html', error=error)
+
 
 @app.route('/logout')
 def logout():
