@@ -15,7 +15,7 @@ from google.cloud.vision import types
 
 
 # Instantiate client
-# client = vision.ImageAnnotatorClient()
+client = vision.ImageAnnotatorClient()
 
 # set authentication
 # GOOGLE_APPLICATION_CREDENTIALS = "My First Project-156aef948acc.json"
